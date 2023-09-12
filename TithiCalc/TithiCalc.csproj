@@ -17,6 +17,7 @@
 	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 	<SignAssembly>False</SignAssembly>
 	<AnalysisLevel>6.0-all</AnalysisLevel>
+	<Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
