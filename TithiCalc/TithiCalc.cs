@@ -1,5 +1,9 @@
 ﻿using CoordinateSharp;
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace TithiCalc
 {
     public static class TithiCalc
@@ -15,7 +19,7 @@ namespace TithiCalc
         /// <param name="indexFilter">Optional set of Tithi indices to filter by.</param>
         /// <param name="precision">Optional precision to control accuracy of tithi time. Higher value will provide higher accuracy but takes more iterations</param>
         /// <returns>A list of Tithi objects within the specified date range.</returns>
-        public static IList<Tithi> GetTithiInRange(DateTime start, DateTime end, ISet<int> indexFilter = null, double precision = Precision)
+        public static IList<Tithi> GetTithiInRange(DateTime start, DateTime end, ISet<int>? indexFilter = null, double precision = Precision)
         {
             if (start >= end)
             {

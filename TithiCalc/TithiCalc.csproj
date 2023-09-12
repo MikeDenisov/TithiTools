@@ -1,10 +1,34 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Tithi Calculator</Title>
+	<Company>Mindful Bytes</Company>
+	<Authors>Mike Denisov</Authors>
+	<Description>TithiCalc is a versatile and precise .NET Core library for calculating Tithis, an essential aspect of Hindu and Vedic lunar calendar systems. Easily determine lunar phases and auspicious times for religious and cultural events. Flexible, efficient, and open source.</Description>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<Copyright>@ 2023 Mykhailo Denysov</Copyright>
+	<PackageProjectUrl>https://github.com/MikeDenisov/TithiCalc</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/MikeDenisov/TithiCalc</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	<SignAssembly>False</SignAssembly>
+	<AnalysisLevel>6.0-all</AnalysisLevel>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CoordinateSharp" Version="2.*" />
