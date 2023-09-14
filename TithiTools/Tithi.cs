@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace TithiCalc
+namespace TithiTools
 {
-    public struct Tithi
+    public readonly struct Tithi: IEquatable<Tithi>
     {
         /// <summary>
         /// Datetime UTC when tithi happens
@@ -26,11 +26,11 @@ namespace TithiCalc
             Angle = angle;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            if (obj is Tithi tObj)
+            if (obj is Tithi other)
             {
-                return DateTimeUTC == tObj.DateTimeUTC && Index == tObj.Index && Angle == tObj.Angle;
+                return Equals(other);
             }
 
             return base.Equals(obj);
@@ -49,6 +49,11 @@ namespace TithiCalc
         public static bool operator !=(Tithi left, Tithi right)
         {
             return !(left == right);
+        }
+
+        public bool Equals(Tithi other)
+        {
+            return DateTimeUTC == other.DateTimeUTC && Index == other.Index && Angle == other.Angle;
         }
     }
 }

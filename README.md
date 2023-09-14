@@ -1,10 +1,10 @@
-# TithiCalc
+# TithiTools
 
-![CI](https://github.com/MikeDenisov/TithiCalc/actions/workflows/dotnet.yml/badge.svg)
-[![NuGet](https://img.shields.io/nuget/v/TithiCalc?logo=nuget)](https://www.nuget.org/packages/TithiCalc/) 
-[![NuGet](https://img.shields.io/nuget/dt/TithiCalc?logo=nuget)](https://www.nuget.org/packages/TithiCalc/)
+![CI](https://github.com/MikeDenisov/TithiTools/actions/workflows/dotnet.yml/badge.svg)
+[![NuGet](https://img.shields.io/nuget/v/TithiTools?logo=nuget)](https://www.nuget.org/packages/TithiTools/) 
+[![NuGet](https://img.shields.io/nuget/dt/TithiTools?logo=nuget)](https://www.nuget.org/packages/TithiTools/)
 
-TithiCalc is a versatile and precise .NET Core library for calculating Tithis, an essential aspect of Hindu and Vedic lunar calendar systems. Easily determine lunar phases and auspicious times for religious and cultural events. Flexible, efficient, and open source.
+TithiTools is a versatile and precise .NET Core library for calculating Tithis, an essential aspect of Hindu and Vedic lunar calendar systems. Easily determine lunar phases and auspicious times for religious and cultural events. Flexible, efficient, and open source.
 
 ## What is a Tithi?
 
@@ -15,24 +15,26 @@ A [**Tithi**](https://en.wikipedia.org/wiki/Tithi) is a fundamental concept in H
 
 ## Installation:
 
-TithiCalc is available as a nuget package from [nuget.org](https://www.nuget.org/packages/TithiCalc)
+TithiTools is available as a nuget package from [nuget.org](https://www.nuget.org/packages/TithiTools)
 ```
-dotnet add package TithiCalc
+dotnet add package TithiTools
 ```
 
 ## Examples
 
-You can use the `TithiCalc` library in your C# application to calculate Tithis for a specific date range.
+You can use the `TithiTools` library in your C# application to calculate Tithis for a specific date range.
 
 ```csharp
+using TithiTools;
+
 // Calculate Tithis within a date range
-var tithis = TithiCalc.GetTithiInRange(startDate, endDate);
+var tithis = TithiCalc.FindTithiInDateRange(startDate, endDate);
 
 // Filter Tithis by specific indices
-var filteredTithis = TithiCalc.GetTithiInRange(startDate, endDate, indexFilter: new HashSet<int> { 11, 26 });
+var filteredTithis = TithiCalc.FindTithiInDateRange(startDate, endDate, indexFilter: new HashSet<int> { 11, 26 });
 
 // Set custom precision
-var precisedTithis = TithiCalc.GetTithiInRange(startDate, endDate, precision: 0.0001d);
+var precisedTithis = TithiCalc.FindTithiInDateRange(startDate, endDate, precision: 0.0001d);
 
 // Calculate angle between the sun and moon at specific time
 var angle = TithiCalc.GetAngle(dateTime);
@@ -40,7 +42,7 @@ var angle = TithiCalc.GetAngle(dateTime);
 
 ## Contributing:
 
-Contributions to the "TithiCalc" library are welcome! Feel free to submit issues, feature requests, or pull requests to help improve the library.
+Contributions to the "TithiTools" library are welcome! Feel free to submit issues, feature requests, or pull requests to help improve the library.
 
 ## License:
 
@@ -48,4 +50,4 @@ This project is licensed under the [GNU License](LICENSE).
 
 ## Acknowledgments:
 
-Special thanks to the [CoordinateSharp](https://github.com/Tronald/CoordinateSharp) library for its contribution to celestial calculations in "TithiCalc."
+Special thanks to the [CoordinateSharp](https://github.com/Tronald/CoordinateSharp) library for its contribution to celestial calculations in "TithiTools".

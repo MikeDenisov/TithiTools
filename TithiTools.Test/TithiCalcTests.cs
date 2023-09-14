@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace TithiCalc.Test
+namespace TithiTools.Test
 {
     [TestFixture]
     public class TithiCalcTests
@@ -9,11 +9,11 @@ namespace TithiCalc.Test
         [TestCase("01.01.2000", "31.01.2025")]
         [TestCase("15.03.2030", "17.11.2050")]
         [TestCase("31.12.2002", "31.01.2015")]
-        public void GetTithiInRange_ValidInput_ReturnsContiniousSequence(string start, string end)
+        public void FindTithiInDateRange_ValidInput_ReturnsContiniousSequence(string start, string end)
         {
             var startDate = DateTime.ParseExact(start, "dd.MM.yyyy", CultureInfo.InvariantCulture);
             var endDate = DateTime.ParseExact(end, "dd.MM.yyyy", CultureInfo.InvariantCulture);
-            var result = TithiCalc.GetTithiInRange(startDate, endDate);
+            var result = TithiCalc.FindTithiInDateRange(startDate, endDate);
 
             Assert.IsNotEmpty(result);
 
@@ -31,42 +31,42 @@ namespace TithiCalc.Test
         [TestCase("01.01.2000", "31.01.2025", new[] { 11, 26 })]
         [TestCase("15.03.2030", "17.11.2050", new[] { 4, 9 })]
         [TestCase("31.12.2002", "31.01.2015", new[] { 3, 30 })]
-        public void GetTithiInRange_ValidInput_ReturnsFilteredResult(string start, string end, int[] filter)
+        public void FindTithiInDateRange_ValidInput_ReturnsFilteredResult(string start, string end, int[] filter)
         {
             var startDate = DateTime.ParseExact(start, "dd.MM.yyyy", CultureInfo.InvariantCulture);
             var endDate = DateTime.ParseExact(end, "dd.MM.yyyy", CultureInfo.InvariantCulture);
             var filterSet = new HashSet<int>(filter);
-            var result = TithiCalc.GetTithiInRange(startDate, endDate, filterSet);
+            var result = TithiCalc.FindTithiInDateRange(startDate, endDate, filterSet);
 
             Assert.IsNotEmpty(result);
             Assert.IsTrue(result.All(tithi => filterSet.Contains(tithi.Index)));
         }
 
         [Test]
-        public void GetTithiInRange_StartDateGreaterThanEndDate_ThrowsException()
+        public void FindTithiInDateRange_StartDateGreaterThanEndDate_ThrowsException()
         {
             var startDate = new DateTime(2023, 9, 7);
             var endDate = new DateTime(2023, 9, 6);
 
-            Assert.Throws<ArgumentOutOfRangeException>(() => TithiCalc.GetTithiInRange(startDate, endDate));
+            Assert.Throws<ArgumentOutOfRangeException>(() => TithiCalc.FindTithiInDateRange(startDate, endDate));
         }
 
         [Test]
-        public void GetTithiInRange_InvalidPrecision_ThrowsException()
+        public void FindTithiInDateRange_InvalidPrecision_ThrowsException()
         {
             var startDate = new DateTime(2023, 9, 6);
             var endDate = new DateTime(2023, 9, 7);
 
-            Assert.Throws<ArgumentOutOfRangeException>(() => TithiCalc.GetTithiInRange(startDate, endDate, precision: -0.001d));
+            Assert.Throws<ArgumentOutOfRangeException>(() => TithiCalc.FindTithiInDateRange(startDate, endDate, precision: -0.001d));
         }
 
         [Test]
-        public void GetTithiInRange_ValidInput_ReturnsTithiList()
+        public void FindTithiInDateRange_ValidInput_ReturnsTithiList()
         {
             var startDate = new DateTime(2023, 9, 6);
             var endDate = new DateTime(2023, 9, 7);
 
-            var tithiList = TithiCalc.GetTithiInRange(startDate, endDate);
+            var tithiList = TithiCalc.FindTithiInDateRange(startDate, endDate);
 
             Assert.IsNotNull(tithiList);
             Assert.IsNotEmpty(tithiList);
@@ -84,12 +84,12 @@ namespace TithiCalc.Test
         }
 
         [Test]
-        public void GetTithiByDay_ValidInput_ReturnsTithiArray()
+        public void FindTithiByDay_ValidInput_ReturnsTithiArray()
         {
             var dateTime = new DateTime(2023, 9, 7);
             var precision = 0.001d;
 
-            var tithiArray = TithiCalc.GetTithiByDay(dateTime, precision);
+            var tithiArray = TithiCalc.FindTithiByDay(dateTime, precision);
 
             Assert.IsNotNull(tithiArray);
             Assert.IsInstanceOf<DateTime[]>(tithiArray);

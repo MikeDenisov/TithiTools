@@ -4,20 +4,20 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>Tithi Calculator</Title>
+    <Title>Tithi Tools</Title>
 	<Company>Mindful Bytes</Company>
 	<Authors>Mike Denisov</Authors>
-	<Description>TithiCalc is a versatile and precise .NET Core library for calculating Tithis, an essential aspect of Hindu and Vedic lunar calendar systems. Easily determine lunar phases and auspicious times for religious and cultural events. Flexible, efficient, and open source.</Description>
+	<Description>TithiTools is a versatile and precise .NET Core library for calculating Tithis, an essential aspect of Hindu and Vedic lunar calendar systems. Easily determine lunar phases and auspicious times for religious and cultural events. Flexible, efficient, and open source.</Description>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<Copyright>@ 2023 Mykhailo Denysov</Copyright>
-	<PackageProjectUrl>https://github.com/MikeDenisov/TithiCalc</PackageProjectUrl>
-	<RepositoryUrl>https://github.com/MikeDenisov/TithiCalc</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/MikeDenisov/TithiTools</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/MikeDenisov/TithiTools</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
 	<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 	<SignAssembly>False</SignAssembly>
 	<AnalysisLevel>6.0-all</AnalysisLevel>
-	<Version>1.0.1</Version>
+	<Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
