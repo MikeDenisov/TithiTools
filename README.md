@@ -10,7 +10,7 @@ TithiTools is a versatile and precise .NET Core library for calculating Tithis, 
 
 A [**Tithi**](https://en.wikipedia.org/wiki/Tithi) is a fundamental concept in Hindu lunar calendars. It represents a specific lunar day or phase of the moon and is a key element in determining auspicious times for religious and cultural events.
 
-![Moon-Sun Angle](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Tithi_Calculation.jpg/1920px-Tithi_Calculation.jpg)
+![Moon-Sun Angle](https://i.imgur.com/A9Hgu6I.jpeg)
 *The image above illustrates the 12-degree angle of separation between the moon and sun, which is used in Tithi calculations.*
 
 ## Installation:
